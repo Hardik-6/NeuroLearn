@@ -1,0 +1,6 @@
+{
+  "name": "NeuroLearn",
+  "description": "Personalized adaptive learning platform for neurodivergent students using soft computing concepts (fuzzy logic, ANFIS, and genetic algorithms).",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

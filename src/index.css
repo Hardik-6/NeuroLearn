@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-mint: #00C896;
+    --brand-mint-rgb: 0, 200, 150;
+    --brand-orange: #FF8A00;
+    --brand-orange-rgb: 255, 138, 0;
+    --brand-blue: #4D84FE;
+    --brand-blue-rgb: 77, 132, 254;
+    --brand-bg: #FFF7F3;
+    --brand-charcoal: #1E293B;
+  }
+
+  body {
+    background-color: #FFF7F3;
+    color: #1E293B;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Warm playful aesthetic utilities matching reference design */
+.bg-canvas {
+  background-color: #FFF7F3;
+}
+
+.text-charcoal {
+  color: #1E293B;
+}
+
+.bg-mint {
+  background-color: #00C896;
+}
+
+.text-mint {
+  color: #00C896;
+}
+
+.border-mint {
+  border-color: #00C896;
+}
+
+.bg-coral {
+  background-color: #FF8A00;
+}
+
+.text-coral {
+  color: #FF8A00;
+}
+
+.border-coral {
+  border-color: #FF8A00;
+}
+
+.bg-action {
+  background-color: #4D84FE;
+}
+
+.text-action {
+  color: #4D84FE;
+}
+
+.border-action {
+  border-color: #4D84FE;
+}
+
+/* Soft, friendly card shadows with organic depth */
+.card-warm {
+  background-color: #FFFFFF;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 138, 0, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(30, 41, 59, 0.04), 0 2px 6px -1px rgba(255, 138, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-warm:hover {
+  box-shadow: 0 10px 25px -4px rgba(30, 41, 59, 0.07), 0 4px 10px -2px rgba(255, 138, 0, 0.05);
+}
+
+/* Rounded pills and pill badges from design */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Smooth micro-transitions */
+button, a {
+  transition: all 0.18s ease-in-out;
+}
