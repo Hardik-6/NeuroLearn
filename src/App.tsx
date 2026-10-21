@@ -55,7 +55,6 @@ import { TeacherAnalyticsPage } from './pages/TeacherAnalyticsPage';
 import { TeacherStudentsPage } from './pages/TeacherStudentsPage';
 import { TeacherQuizBankPage } from './pages/TeacherQuizBankPage';
 import { TeacherSubmissionsPage } from './pages/TeacherSubmissionsPage';
-import { PresentationView } from './pages/PresentationView';
 import { MultiModalSubmissionPage } from './pages/MultiModalSubmissionPage';
 import { getFuzzyState } from './algorithms/softComputing';
 
@@ -89,7 +88,7 @@ export default function App() {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.ACTIVE_ROLE);
       if (saved === 'teacher' || saved === 'student') return saved;
-    } catch {}
+    } catch { }
     return 'student';
   });
 
@@ -113,7 +112,7 @@ export default function App() {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.ACTIVE_STUDENT_ID);
       if (saved) return saved;
-    } catch {}
+    } catch { }
     return '';
   });
 
@@ -135,7 +134,7 @@ export default function App() {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.SELECTED_LESSON_ID);
       if (saved) return saved;
-    } catch {}
+    } catch { }
     return DEFAULT_LESSONS[0]?.id || '';
   });
 
@@ -172,7 +171,7 @@ export default function App() {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) return parsed;
       }
-    } catch {}
+    } catch { }
     return DEFAULT_COMPLETED_LESSONS;
   });
 
@@ -183,7 +182,7 @@ export default function App() {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) return parsed;
       }
-    } catch {}
+    } catch { }
     return DEFAULT_QUIZ_ATTEMPTS;
   });
 
@@ -194,7 +193,7 @@ export default function App() {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0) return parsed;
       }
-    } catch {}
+    } catch { }
     return DEFAULT_FOCUS_LOGS;
   });
 
@@ -276,7 +275,7 @@ export default function App() {
     if (activeStudentId) {
       try {
         localStorage.setItem(STORAGE_KEYS.ACTIVE_STUDENT_ID, activeStudentId);
-      } catch {}
+      } catch { }
       saveSettingsToStorage({ activeStudentId });
     }
   }, [activeStudentId]);
@@ -285,7 +284,7 @@ export default function App() {
     if (selectedLessonId) {
       try {
         localStorage.setItem(STORAGE_KEYS.SELECTED_LESSON_ID, selectedLessonId);
-      } catch {}
+      } catch { }
       saveSettingsToStorage({ selectedLessonId });
     }
   }, [selectedLessonId]);
@@ -293,7 +292,7 @@ export default function App() {
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEYS.ACTIVE_ROLE, role);
-    } catch {}
+    } catch { }
     saveSettingsToStorage({ activeRole: role });
   }, [role]);
 
@@ -571,9 +570,9 @@ export default function App() {
                   quizAverage={
                     quizAttempts.length > 0
                       ? Math.round(
-                          quizAttempts.reduce((acc, q) => acc + q.scorePercent, 0) /
-                            quizAttempts.length
-                        )
+                        quizAttempts.reduce((acc, q) => acc + q.scorePercent, 0) /
+                        quizAttempts.length
+                      )
                       : (activeStudent.recentAccuracy || 0)
                   }
                   currentLessonTitle={currentLesson.title}
@@ -729,14 +728,7 @@ export default function App() {
             </>
           )}
 
-          {/* Shared Routes */}
-          {(currentRoute === 'presentation-deck' || currentRoute === 'presentation') && (
-            <PresentationView
-              onNavigateBack={() =>
-                setCurrentRoute(role === 'teacher' ? 'teacher-dashboard' : 'student-dashboard')
-              }
-            />
-          )}
+
 
           {currentRoute === 'create-profile' && (
             <StudentProfilePage
