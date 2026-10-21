@@ -14,3 +14,7 @@
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+=======
+# NeuroLearn
+AI-powered adaptive learning platform designed for neurodivergent learners, using machine learning, fuzzy logic, assistive technologies, and personalized learning techniques to create an accessible and adaptive educational experience.
+
